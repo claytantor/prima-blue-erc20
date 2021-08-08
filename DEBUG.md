@@ -13,3 +13,156 @@ Commands:
 (+) add watch expression (`+:<expr>`), (-) remove watch expression (-:<expr>)
 (?) list existing watch expressions and breakpoints
 (v) print variables and values, (:) evaluate expression - see `v`
+
+
+
+
+addWhitelisted:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  hasClosed:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  removeWhitelisted:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  rate:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  isWhitelisted:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  weiRaised:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  isOpen:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  closingTime:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  renounceWhitelistAdmin:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  wallet:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  renounceOwnership:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  addWhitelistAdmin:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  owner:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  isOwner:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  openingTime:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  isWhitelistAdmin:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  renounceWhitelisted:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  buyTokens:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  transferOwnership:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  token:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  OwnershipTransferred: [Function],
+  TimedCrowdsaleExtended: [Function],
+  TokensPurchased: [Function],
+  WhitelistedAdded: [Function],
+  WhitelistedRemoved: [Function],
+  WhitelistAdminAdded: [Function],
+  WhitelistAdminRemoved: [Function],
+  addWhitelistedAccounts:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  burn:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  transferToIEO:
+   { [Function]
+     call: [Function],
+     sendTransaction: [Function],
+     estimateGas: [Function],
+     request: [Function] },
+  sendTransaction: [Function],
+  send: [Function],
+  allEvents: [Function],
+  getPastEvents: [Function] }

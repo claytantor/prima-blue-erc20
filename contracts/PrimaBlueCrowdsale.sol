@@ -20,7 +20,7 @@ contract PrimaBlueCrowdsale is Crowdsale, TimedCrowdsale, WhitelistCrowdsale, Ow
     constructor(
         uint256 defaultRate,  
         address owner,  
-        address payable wallet,
+        address payable wallet, //this is where the USDC ends up that will become the liquidity pool
         IERC20 token,
         uint256 openingTime,
         uint256 closingTime
@@ -46,11 +46,6 @@ contract PrimaBlueCrowdsale is Crowdsale, TimedCrowdsale, WhitelistCrowdsale, Ow
         ERC20Burnable burnableToken = ERC20Burnable(address(token()));
         burnableToken.burn(burnableToken.balanceOf(address(this)));
     }
-
-    // modifier onlyOwner(){
-    //     require(msg.sender == owner);
-    //     _;
-    // }
 
     /**
         * @dev Transfer tokens originally intended to be sold as part of this crowdsale to an IEO.

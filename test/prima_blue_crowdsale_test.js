@@ -37,6 +37,8 @@ contract("PrimaBlueCrowdsaleDeployer", accounts => {
   const advisor1Addr = accounts[8];
   const advisor2Addr = accounts[9];
 
+  const burnWallet = accounts[10];
+
   let crowdsaleDeployer, token, team1, team2, advisor1, advisor2;
 
   const deployVestingContracts = async durationInYears => {
@@ -55,7 +57,7 @@ contract("PrimaBlueCrowdsaleDeployer", accounts => {
   };
 
   beforeEach(async () => {
-    crowdsaleDeployer = await PrimaBlueCrowdsaleDeployer.new(owner);
+    crowdsaleDeployer = await PrimaBlueCrowdsaleDeployer.new(owner,burnWallet);
     await deployVestingContracts(NUMBER_YEARS_VESTING);
   });
 

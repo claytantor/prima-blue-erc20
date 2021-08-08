@@ -22,14 +22,6 @@ contract PrimaBlueCrowdsaleDeployer is Ownable {
     uint256 private constant decimalFactor = 10**uint256(decimals);
 
 
-// AVAILABLE_PRESALE_SUPPLY	10000000	10.00%
-// AVAILABLE_MAINSALE_SUPPLY	35000000	35.00%
-// AVAILABLE_FOUNDATION_SUPPLY	35000000	35.00%
-// AVAILABLE_BOUNTY_SUPPLY	1000000	1.00%
-// AVAILABLE_FAMILYFRIENDS_SUPPLY	2000000	2.00%
-// AVAILABLE_TEAM_SUPPLY	15000000	15.00%
-// AVAILABLE_ADVISOR_SUPPLY	2000000	2.00%
-
     uint256 private constant AVAILABLE_TOTAL_SUPPLY = 100000000 * decimalFactor;
 
     uint256 private constant AVAILABLE_PRESALE_SUPPLY = 10000000 * decimalFactor; // 10% Released at Token Distribution (TD)
@@ -44,9 +36,10 @@ contract PrimaBlueCrowdsaleDeployer is Ownable {
 
     uint256 private constant TOKEN_VESTING_DURATION_SECONDS = 31536000; // 1 years as seconds
 
-    constructor(address owner) public {
+
+    constructor(address owner, address burnWallet) public {
         transferOwnership(owner);
-        token = new PrimaBlueToken(owner);
+        token = new PrimaBlueToken(owner, burnWallet);
     }
 
     function mint(

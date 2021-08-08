@@ -8,10 +8,17 @@ import "@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20Capped.sol";
 import "@openzeppelin/contracts/ownership/Ownable.sol";
+import "@openzeppelin/contracts/math/SafeMath.sol";
 
 contract PrimaBlueToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable, ERC20Capped, Ownable {
 
-  constructor(address owner)
+  using SafeMath for uint256;
+
+  address private _burnWallet;
+
+  uint256 private constant BURN_DIV = 200; // 0.5 percent burned
+
+  constructor(address owner, address burnWallet)
   ERC20Burnable()
   ERC20Mintable()
   ERC20Detailed("Prima Blue", "PRMB", 18)
@@ -19,6 +26,7 @@ contract PrimaBlueToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable, E
   ERC20()
   public
   {
+    _burnWallet = burnWallet;
     transferOwnership(owner);
   }
 
@@ -27,10 +35,25 @@ contract PrimaBlueToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable, E
     * @param to The address to transfer to.
     * @param value The amount to be transferred.
     */
-  function transfer(address to, uint256 value) public returns (bool) {
+  function transfer(address to, uint256 value) public onlyOwner returns (bool) {
     require(to != address(this));
 
-    _transfer(msg.sender, to, value);
+    /* .005 per transacton will go to the burn = div/200 */
+    /* div(uint256 a, uint256 b, string errorMessage) → uint256*/
+    uint256 v_burn = value.div(BURN_DIV);
+    uint256 v_send = value.sub(v_burn);
+
+    require(
+          value == v_burn.add(v_send),
+          "VALUE BURN MATCH"
+    );
+
+    // send to the burn wallet
+    _transfer(msg.sender, _burnWallet, v_burn);
+
+    // send to the receiver
+    _transfer(msg.sender, to, v_send);
+
     return true;
   }
 
@@ -42,7 +65,6 @@ contract PrimaBlueToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable, E
    */
   function mint(address to, uint256 value) public onlyMinter returns (bool) {
     require(to != address(this));
-
     _mint(to, value);
     return true;
   }
@@ -57,6 +79,11 @@ contract PrimaBlueToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable, E
       revert();
     }
     erc20token.transfer(msg.sender, balance);
+  }
+
+
+  function burnWallet() public view returns (address) {
+    return _burnWallet;
   }
 
 
