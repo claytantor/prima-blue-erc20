@@ -171,10 +171,13 @@ contract("PrimaBlueCrowdsaleDeployer", accounts => {
 
       expect(await token.balanceOf.call(team1)).to.be.bignumber.equal(Web3.utils.toWei(new BN('15000000')));
       expect(await token.balanceOf.call(advisor1)).to.be.bignumber.equal(Web3.utils.toWei(new BN('2000000')));
+      
       return assert.isTrue(true);
 
-
     });
+
+
+
 
   });
 

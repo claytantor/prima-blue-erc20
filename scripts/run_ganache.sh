@@ -1,2 +1,36 @@
 #!/bin//bash
-ganache-cli -p 7545 --networkId 5777 --accounts 11
+
+# Available Accounts
+# ==================
+# (0) 0x681E345CF94c56fCB50E4DD5a409CBCE58795D0E (100 ETH)
+# (1) 0x8eA0a5b4721d1E6325D2f07E9aD6866a20174026 (100 ETH)
+# (2) 0x6DD1E20113fC77aa838C035E20836653aF0cA140 (100 ETH)
+# (3) 0x1724E96698d325B247CC41354Fef16448b868CE3 (100 ETH)
+# (4) 0x0eefF0dbe9818D05a41d56b3B477BAF8DFFbE652 (100 ETH)
+# (5) 0xBE82a87382e6A5e558C9bB5b1f5661E7A35c4009 (100 ETH)
+# (6) 0xE7013eaC0a7e5985eD121537C679AF2D99c8fcaf (100 ETH)
+# (7) 0x95E69B5a4Eb3665d52F748f7a706C68D9889b2dB (100 ETH)
+# (8) 0xfc7514394cFF2e5Ba1C518D8B00e73654ac4D685 (100 ETH)
+# (9) 0x432ed90A5c2D80F0bE73B977192907D56e0d5274 (100 ETH)
+# (10) 0x7bABa28406fc01C78462f618cc51cbA8AA12D644 (100 ETH)
+
+# Private Keys
+# ==================
+# (0) 0x88b67616271fb359de6e313107d205bb45a60ca1f0071afe94381c35f3c4d796
+# (1) 0x6c126d58950577cbe3850bb59a66c8c4a5955e8f14eccd42b2f09c183864965e
+# (2) 0x22cb8d7517f76ed6d840e3ba2a9cf9cc13da3a02173cb1d634529895acd1adbb
+# (3) 0x6204625f82aeb842b4410943a04b9192a0cac7df212ae315ed0a257152e47eed
+# (4) 0xb595ba6851cc5f168e481499870c91ab9262350729d07905f225b526364edc33
+# (5) 0x7f39301121a94369d975236aea6e91acb4a1ce10288a420f253d51f4731e2d2e
+# (6) 0x78e69bae4d24bdfe671da6220203de7831acdadc91d98c8d0791f0c3457293ae
+# (7) 0x9f49238e02c1a045e5ed8b539b2a21b690a90ef0bc3a864fc36e1eda7dc38d7f
+# (8) 0x3276c6edba6bb1b457e4b99b391a71f8b7c80cfd3a505515817d2de0f0520d6d
+# (9) 0xafc70f2bbb6120b33279da02d9d279c55405e74fc8009b7a8040ead077a2b60f
+# (10) 0x2e0011369778dbbc01881d57ce7d1cc47309fa302d16637291f9d50b26bb1367
+
+# HD Wallet
+# ==================
+# Mnemonic:      amused cube expire goddess demise stick wrap sting river student body cook
+# Base HD Path:  m/44'/60'/0'/0/{account_index}
+
+ganache-cli -p 7545 --networkId 5777 --accounts 11 --deterministic --mnemonic "amused cube expire goddess demise stick wrap sting river student body cook"
